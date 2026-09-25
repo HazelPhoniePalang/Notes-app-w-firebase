@@ -146,8 +146,7 @@ class _HomePageState extends State<HomePage> {
                   subtitle: Text(
                     "Quantity ${data['quantity'] ?? 0}",
                     style: const TextStyle(fontSize: 14, color: Colors.grey),
-                  ), // Text
-                  // FAVORITE, EDIT AND DELETE
+                  ),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -242,7 +241,13 @@ class _HomePageState extends State<HomePage> {
               TextField(
                 controller: qtyCtrl,
                 keyboardType: TextInputType.number,
-              ), // TextField
+                decoration: InputDecoration(
+                  labelText: "Quantity",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+              ),
               const SizedBox(height: 10),
               if (selectedImageFile != null)
                 ClipRRect(
@@ -252,8 +257,8 @@ class _HomePageState extends State<HomePage> {
                     width: 120,
                     height: 120,
                     fit: BoxFit.cover,
-                  ), // Image.file
-                ), // ClipRRect
+                  ),
+                ),
               const SizedBox(height: 8),
               ElevatedButton.icon(
                 icon: const Icon(Icons.upload_file),
